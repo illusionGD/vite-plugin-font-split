@@ -1,0 +1,65 @@
+{
+    "name": "vite-plugin-font-split",
+    "version": "1.0.0",
+    "description": "Vite 字体裁剪/分包插件：根据字符集裁剪压缩字体，输出多格式字体与 @font-face 样式，支持自动分包与开发态热重建",
+    "main": "./dist/cjs/index.js",
+    "module": "./dist/esm/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/esm/index.js",
+            "require": "./dist/cjs/index.js"
+        }
+    },
+    "type": "module",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "rimraf dist && rollup -c"
+    },
+    "files": [
+        "dist",
+        "package.json",
+        "README.md"
+    ],
+    "keywords": [
+        "vite",
+        "vite-plugin",
+        "font",
+        "font-subset",
+        "subset",
+        "woff2",
+        "font-split"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/illusionGD/vite-plugin-font-split.git",
+        "directory": "packages/core"
+    },
+    "homepage": "https://github.com/illusionGD/vite-plugin-font-split#readme",
+    "bugs": {
+        "url": "https://github.com/illusionGD/vite-plugin-font-split/issues"
+    },
+    "author": "illusionGD",
+    "license": "MIT",
+    "devDependencies": {
+        "@rollup/plugin-babel": "^6.0.4",
+        "@rollup/plugin-commonjs": "^28.0.3",
+        "@rollup/plugin-json": "^6.1.0",
+        "@rollup/plugin-node-resolve": "^16.0.1",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@rollup/plugin-typescript": "^12.1.2",
+        "@types/node": "^22.13.9",
+        "rimraf": "^6.0.1",
+        "rollup": "^4.27.3"
+    },
+    "dependencies": {
+        "cn-font-split": "^7.4.3",
+        "fontverter": "^2.0.0",
+        "picocolors": "^1.1.1",
+        "subset-font": "^2.5.0"
+    }
+}

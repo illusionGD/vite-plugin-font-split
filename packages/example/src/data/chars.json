@@ -1,0 +1,11 @@
+{
+    "title": "Vite 字体裁剪 / 分包插件",
+    "subtitle": "根据字符集裁剪压缩字体，输出多格式与 @font-face 样式",
+    "features": [
+        "按字符白名单裁剪",
+        "可选自动分包",
+        "多格式输出",
+        "开发态热重建"
+    ],
+    "footer": "由 vite-plugin-font-split 驱动"
+}

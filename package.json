@@ -1,0 +1,53 @@
+{
+    "name": "vite-plugin-font-split-monorepo",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "description": "Monorepo for vite-plugin-font-split: a Vite plugin that subsets/splits fonts by charset",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/illusionGD/vite-plugin-font-split.git"
+    },
+    "author": "illusionGD",
+    "license": "MIT",
+    "scripts": {
+        "build": "pnpm --filter vite-plugin-font-split build",
+        "lint": "eslint --fix",
+        "example:dev": "pnpm --filter vite-plugin-font-split-example dev",
+        "example:build": "pnpm --filter vite-plugin-font-split-example build",
+        "commit": "git add . && git-cz",
+        "push": "npm run commit && git push",
+        "prepare": "husky install",
+        "release": "changeset add && changeset version",
+        "publish:release": "pnpm build && changeset publish"
+    },
+    "keywords": [
+        "vite",
+        "vite-plugin",
+        "font",
+        "font-subset",
+        "subset",
+        "woff2",
+        "font-split"
+    ],
+    "devDependencies": {
+        "@changesets/changelog-github": "^0.5.1",
+        "@changesets/cli": "^2.28.1",
+        "@eslint/js": "^9.23.0",
+        "@types/node": "^22.13.9",
+        "commitizen": "^4.3.1",
+        "cz-conventional-changelog": "^3.3.0",
+        "eslint": "^9.23.0",
+        "globals": "^16.0.0",
+        "husky": "^8.0.0",
+        "lint-staged": "^15.5.0",
+        "prettier": "^3.5.3",
+        "typescript": "~5.7.2",
+        "typescript-eslint": "^8.28.0"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    }
+}

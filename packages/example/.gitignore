@@ -1,0 +1,8 @@
+# build output
+dist
+
+# plugin-generated artifacts (regenerated on dev/build)
+src/assets/fonts/output
+src/assets/fonts/output-split
+src/assets/style/fonts.scss
+src/assets/style/fonts-split.scss

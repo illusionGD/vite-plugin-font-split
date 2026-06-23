@@ -1,0 +1,6 @@
+packages:
+  - 'packages/*'
+
+onlyBuiltDependencies:
+  - cn-font-split
+  - esbuild
