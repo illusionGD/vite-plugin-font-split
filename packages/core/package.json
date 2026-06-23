@@ -1,6 +1,6 @@
 {
     "name": "vite-plugin-font-split",
-    "version": "1.0.0",
+    "version": "1.1.1",
     "description": "Vite 字体裁剪/分包插件：根据字符集裁剪压缩字体，输出多格式字体与 @font-face 样式，支持自动分包与开发态热重建",
     "main": "./dist/cjs/index.js",
     "module": "./dist/esm/index.js",

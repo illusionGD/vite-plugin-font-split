@@ -22,6 +22,7 @@ jobs:
       - name: Set up Git user
         run: |
           git config --global user.name "hollow_orld"
+          git config --global user.email "hollow_orld@users.noreply.github.com"
 
       - name: Install Pnpm
         uses: pnpm/action-setup@v2
@@ -41,17 +42,19 @@ jobs:
       - name: Build Packages
         run: pnpm -r --filter=vite-plugin-font-split build
 
-      - name: Setup Changesets
-        uses: changesets/action@v1
-        with:
-          version: pnpm changeset version
-          commit: "[ci] Version Packages"
-          title: "Version Packages (GitHub Actions)"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Version Packages
+        run: pnpm changeset version
 
       - name: Publish Packages
         run: pnpm changeset publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit & Push version bump
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "[ci] Version Packages"
+          fi
+          git push --follow-tags origin HEAD:main

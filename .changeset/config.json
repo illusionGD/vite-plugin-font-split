@@ -1,13 +1,10 @@
 {
     "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
-    "changelog": [
-        "@changesets/changelog-github",
-        { "repo": "illusionGD/vite-plugin-font-split" }
-    ],
+    "changelog": "@changesets/cli/changelog",
     "commit": false,
     "fixed": [],
     "linked": [],
-    "access": "public",
+    "access": "restricted",
     "baseBranch": "main",
     "updateInternalDependencies": "patch",
     "ignore": ["vite-plugin-font-split-example"]
