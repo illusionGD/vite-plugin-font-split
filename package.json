@@ -1,6 +1,6 @@
 {
     "name": "vite-plugin-font-split-monorepo",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "private": true,
     "type": "module",
     "description": "Monorepo for vite-plugin-font-split: a Vite plugin that subsets/splits fonts by charset",
