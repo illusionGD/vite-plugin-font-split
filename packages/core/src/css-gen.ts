@@ -18,6 +18,7 @@ function buildSrc(
     const sorted = [...group.artifacts].sort(
         (a, b) => order.indexOf(a.format) - order.indexOf(b.format)
     )
+    
     return sorted
         .map((art) => {
             const fontAbs = path.join(outputAbsDir, art.fileName)
