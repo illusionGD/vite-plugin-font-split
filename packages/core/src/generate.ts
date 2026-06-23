@@ -29,6 +29,7 @@ function ruleSignature(
         outputDir: rule.outputDir,
         stylePath: rule.stylePath
     })
+    
     return hashContent(fontBuffer, charset.join(''), config)
 }
 
